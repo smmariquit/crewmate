@@ -6,6 +6,7 @@ import os
 import json
 from datetime import datetime
 import asyncio
+from firebase_client import db
 
 # Load environment variables
 load_dotenv()
@@ -44,49 +45,52 @@ class ProjectManager:
         self.load_data()
     
     def load_data(self):
+        # Load all data from Firestore
         try:
-            with open('project_data.json', 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                self.projects = data.get('projects', {})
-                self.user_roles = data.get('user_roles', {})
-                self.user_points = data.get('user_points', {})
-                self.user_tasks = data.get('user_tasks', {})
-                self.forum_channel_name = data.get('forum_channel_name', "📋・projects")
-                self.permissions = data.get('permissions', {
-                    'project_management': ['owner', 'admin', 'Team Leader'],
-                    'forum_config': ['owner', 'admin'],
-                    'shop_management': ['owner', 'admin'],
-                    'permission_management': ['owner']
-                })
-        except (FileNotFoundError, json.JSONDecodeError, IOError) as e:
-            print(f"Warning: Could not load data file: {e}")
-            # Initialize with default values
-            self.projects = {}
-            self.user_roles = {}
-            self.user_points = {}
-            self.user_tasks = {}
-            self.forum_channel_name = "📋・projects"
-            self.permissions = {
-                'project_management': ['owner', 'admin', 'Team Leader'],
-                'forum_config': ['owner', 'admin'],
-                'shop_management': ['owner', 'admin'],
-                'permission_management': ['owner']
-            }
+            # Projects
+            projects_ref = db.collection('projects').stream()
+            self.projects = {doc.id: doc.to_dict() for doc in projects_ref}
+            # User roles
+            user_roles_ref = db.collection('user_roles').document('roles').get()
+            self.user_roles = user_roles_ref.to_dict() if user_roles_ref.exists else {}
+            # User points
+            user_points_ref = db.collection('user_points').document('points').get()
+            self.user_points = user_points_ref.to_dict() if user_points_ref.exists else {}
+            # User tasks
+            user_tasks_ref = db.collection('user_tasks').document('tasks').get()
+            self.user_tasks = user_tasks_ref.to_dict() if user_tasks_ref.exists else {}
+            # Forum channel name
+            forum_channel_ref = db.collection('config').document('forum_channel').get()
+            self.forum_channel_name = forum_channel_ref.to_dict().get('name', "📋・projects") if forum_channel_ref.exists else "📋・projects"
+            # Permissions
+            permissions_ref = db.collection('config').document('permissions').get()
+            self.permissions = permissions_ref.to_dict() if permissions_ref.exists else self.permissions
+            # Shop items
+            shop_items_ref = db.collection('shop').document('items').get()
+            self.shop_items = shop_items_ref.to_dict() if shop_items_ref.exists else {}
+        except Exception as e:
+            print(f"Warning: Could not load data from Firestore: {e}")
     
     def save_data(self):
+        # Save all data to Firestore
         try:
-            data = {
-                'projects': self.projects,
-                'user_roles': self.user_roles,
-                'user_points': self.user_points,
-                'user_tasks': self.user_tasks,
-                'forum_channel_name': self.forum_channel_name,
-                'permissions': self.permissions
-            }
-            with open('project_data.json', 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
-        except (IOError, OSError) as e:
-            print(f"Error saving data: {e}")
+            # Projects
+            for project_id, project in self.projects.items():
+                db.collection('projects').document(project_id).set(project)
+            # User roles
+            db.collection('user_roles').document('roles').set(self.user_roles)
+            # User points
+            db.collection('user_points').document('points').set(self.user_points)
+            # User tasks
+            db.collection('user_tasks').document('tasks').set(self.user_tasks)
+            # Forum channel name
+            db.collection('config').document('forum_channel').set({'name': self.forum_channel_name})
+            # Permissions
+            db.collection('config').document('permissions').set(self.permissions)
+            # Shop items
+            db.collection('shop').document('items').set(self.shop_items)
+        except Exception as e:
+            print(f"Error saving data to Firestore: {e}")
     
     def has_permission(self, user_roles, permission_type):
         """Check if user has permission for a specific action"""
