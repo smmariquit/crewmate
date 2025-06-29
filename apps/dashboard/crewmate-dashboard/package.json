@@ -3,9 +3,9 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
 		"start": "svelte-kit preview",	
-		"build": "vite build && npm run prepack",
 		"prepare": "svelte-kit sync || echo ''",
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
