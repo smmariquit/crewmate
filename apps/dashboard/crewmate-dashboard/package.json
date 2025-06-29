@@ -2,9 +2,10 @@
 	"name": "crewmate-dashboard",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "svelte-kit dev",
+		"preview": "svelte-kit preview",
+		"start": "svelte-kit preview",	
 		"build": "vite build && npm run prepack",
-		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"prepack": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

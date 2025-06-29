@@ -45,3 +45,4 @@ Thumbs.db
 apps/discord/.env
 apps/discord/.venv/
 apps/discord/config.json
+apps/discord/serviceAccountKey.json
