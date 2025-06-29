@@ -1,0 +1,72 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Add to Changelog
+
+Update the project's CHANGELOG.md file with a new entry.
+
+## Usage:
+`/add-to-changelog <version> <change_type> <message>`
+
+## Parameters:
+- `<version>`: Version number (e.g., "1.1.0")
+- `<change_type>`: One of: "added", "changed", "deprecated", "removed", "fixed", "security"
+- `<message>`: Description of the change
+
+## Examples:
+- `/add-to-changelog 1.1.0 added "New markdown to BlockDoc conversion feature"`
+- `/add-to-changelog 1.0.2 fixed "Bug in HTML renderer causing incorrect output"`
+
+## Steps:
+1. Check for existing CHANGELOG.md or create if missing
+2. Find or create section for the specified version
+3. Add the new entry under the appropriate change type
+4. Format according to Keep a Changelog conventions
+5. Write the updated changelog back to file
+6. Optionally commit the changes with appropriate message
+
+## Format:
+Follow [Keep a Changelog](mdc:https:/keepachangelog.com) format:
+- Group changes by type
+- List changes as bullet points
+- Include date for version sections
+
+- Keep entries concise but descriptive
+
+## Development Workflow
+
+### 1. Feature Development
+- Start with Firebase schema design
+- Implement Discord bot NLP functionality
+- Build web dashboard components
+- Integrate asset growth system
+- Add analytics and reporting
+
+### 2. Testing Strategy
+- Test NLP accuracy with various inputs
+- Verify real-time data synchronization
+- Validate asset growth calculations
+- Test cross-platform functionality
+
+### 3. Deployment
+- Discord bot: Host on reliable platform (Railway, Heroku)
+- Web dashboard: Deploy to Vercel or similar
+- Firebase: Configure security rules and indexes
+- Monitoring: Set up error tracking and analytics
+
+## Success Metrics
+- NLP command accuracy > 90%
+- Real-time sync latency < 2 seconds
+- Asset growth responsiveness
+- User engagement with gamification
+- Dashboard usability and performance
+
+## Future Enhancements
+- Mobile app integration
+- Advanced analytics and insights
+- Team collaboration features
+- Integration with external tools
+
+- AI-powered task suggestions

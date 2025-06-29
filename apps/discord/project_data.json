@@ -1,0 +1,66 @@
+{
+  "projects": {
+    "test 1": {
+      "description": "changed description test",
+      "status": "In Progress",
+      "progress": 0,
+      "created": "2025-06-30 02:36",
+      "created_by": "_i_cant_think_of_a_name_",
+      "tasks": [
+        {
+          "description": "update docu",
+          "reward_points": 30,
+          "max_members": 1,
+          "assigned_members": [
+            "734982479437496342"
+          ],
+          "completed": false
+        },
+        {
+          "description": "new task test",
+          "reward_points": 100,
+          "max_members": 2,
+          "assigned_members": [],
+          "completed": false
+        },
+        {
+          "description": "add task",
+          "reward_points": 2,
+          "max_members": 2,
+          "assigned_members": [],
+          "completed": false
+        }
+      ],
+      "members": [
+        "_i_cant_think_of_a_name_"
+      ]
+    }
+  },
+  "user_roles": {},
+  "user_points": {
+    "734982479437496342": 75
+  },
+  "user_tasks": {},
+  "forum_channel_name": "projects",
+  "permissions": {
+    "project_management": [
+      "owner",
+      "admin",
+      "Team Leader",
+      "Crew Head"
+    ],
+    "forum_config": [
+      "owner",
+      "admin",
+      "Crew Head"
+    ],
+    "shop_management": [
+      "owner",
+      "admin",
+      "Crew Head"
+    ],
+    "permission_management": [
+      "owner"
+    ]
+  }
+}

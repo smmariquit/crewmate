@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+apps/*/node_modules/
+packages/*/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+apps/discord/.venv/
+
+# SvelteKit/Web
+apps/web-dashboard/.svelte-kit/
+dist/
+build/
+
+# Environment variables
+.env
+.env.*
+apps/*/.env
+packages/*/.env
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Logs
+*.log
+apps/*/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Misc
+*.swp
+*.swo
+.idea/ 
+
+# Discord Bot
+apps/discord/.env
+apps/discord/.venv/
+apps/discord/config.json
