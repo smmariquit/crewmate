@@ -13,6 +13,8 @@
 - `pnpm install && pnpm dev` in `apps/crewmate-dashboard` to run locally
 - No login required—just click **Sign In** to view the dashboard!
 
+> **You do NOT need to join the Discord server to try the demo!**
+
 > **Disclaimer:** Crewmate is a fan-made project and is not affiliated with Among Us or Innersloth LLC. All trademarks are property of their respective owners.
 
 ## Features
@@ -29,28 +31,15 @@
 
 ```mermaid
 flowchart TD
-  U1["User (Web)"]
-  U2["User (Discord/Slack/Telegram/Teams)"]
-  FE["React/Vite Frontend"]
-  API["API Layer"]
-  DiscordBot["Discord Bot (Python)"]
-  SlackBot["Slack Bot (Coming Soon)"]
-  TelegramBot["Telegram Bot (Coming Soon)"]
-  TeamsBot["Teams Bot (Coming Soon)"]
+  User["User (Web or Chat)"]
+  Dashboard["Dashboard (React/Vite)"]
+  IntegratorBot["Integrator Bot (Discord, Telegram, WhatsApp, etc.)"]
   Firebase["Firebase (Auth, DB, Functions)"]
-  U1 -->|"Browser"| FE
-  U2 -->|"Chat Commands"| DiscordBot
-  FE -->|"REST/Realtime"| API
-  API -->|"Realtime/REST"| Firebase
-  DiscordBot -->|"Realtime/REST"| Firebase
-  SlackBot -->|"Realtime/REST"| Firebase
-  TelegramBot -->|"Realtime/REST"| Firebase
-  TeamsBot -->|"Realtime/REST"| Firebase
-  FE -->|"Realtime"| Firebase
-  FE -->|"Bot Management"| DiscordBot
-  FE -->|"Bot Management"| SlackBot
-  FE -->|"Bot Management"| TelegramBot
-  FE -->|"Bot Management"| TeamsBot
+  User -->|"Browser"| Dashboard
+  User -->|"Chat Commands"| IntegratorBot
+  Dashboard -->|"Realtime/REST"| Firebase
+  IntegratorBot -->|"Realtime/REST"| Firebase
+  Dashboard -->|"Bot Management"| IntegratorBot
 ```
 
 ---
