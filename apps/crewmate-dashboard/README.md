@@ -67,3 +67,5 @@ export default tseslint.config([
   },
 ])
 ```
+
+**Demo Discord:** [Join Demo Server](https://discord.gg/e5G5x89j)

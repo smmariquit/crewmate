@@ -240,7 +240,7 @@ function HeroPage() {
           </ul>
           <div className="hero-cta-row amongus-cta">
             <button className="primary-button" onClick={() => navigate('/dashboard')}>Get Started Free</button>
-            <a href="https://discord.gg/Q2fQyfXk" target="_blank" rel="noopener noreferrer" className="join-demo-btn amongus-btn">Join Demo Discord</a>
+            <a href="https://discord.gg/e5G5x89j" target="_blank" rel="noopener noreferrer" className="join-demo-btn amongus-btn">Join Demo Discord</a>
           </div>
           <div className="demo-note"><strong>No need to join the server to try the demo!</strong></div>
           <AmongUsAttribution />
