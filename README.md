@@ -8,8 +8,8 @@
 ---
 
 ## 🚀 Hackathon Quickstart
-- **Demo:** [https://crewmate-demo.vercel.app](https://crewmate-demo.vercel.app)
-- **Live Deployment:** [https://crewmate-app.vercel.app](https://crewmate-app.vercel.app)
+- **Demo Discord:** [https://discord.gg/e5G5x89j](https://discord.gg/e5G5x89j)
+- **Live Deployment:** [bright-zuccutto-258ff5.netlify.app/](bright-zuccutto-258ff5.netlify.app/)
 - `pnpm install && pnpm dev` in `apps/crewmate-dashboard` to run locally
 - No login required—just click **Sign In** to view the dashboard!
 
