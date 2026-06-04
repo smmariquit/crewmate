@@ -99,3 +99,6 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 ## License
 
 This project is for educational and demonstration purposes. 
+
+---
+*If this project helped you out, consider [treating me to a coffee](https://kape.stimmie.dev) ☕*
