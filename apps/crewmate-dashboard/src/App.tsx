@@ -1,3 +1,5 @@
+// apps/crewmate-dashboard/src/App.tsx
+
 import { useState, useEffect, useRef } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import './App.css'
