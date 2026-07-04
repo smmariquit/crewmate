@@ -31,15 +31,15 @@
 
 ```mermaid
 flowchart TD
-  User["User (Web or Chat)"]
-  Dashboard["Dashboard (React/Vite)"]
-  IntegratorBot["Integrator Bot (Discord, Telegram, WhatsApp, etc.)"]
-  Firebase["Firebase (Auth, DB, Functions)"]
-  User -->|"Browser"| Dashboard
-  User -->|"Chat Commands"| IntegratorBot
-  Dashboard -->|"Realtime/REST"| Firebase
-  IntegratorBot -->|"Realtime/REST"| Firebase
-  Dashboard -->|"Bot Management"| IntegratorBot
+ User["User (Web or Chat)"]
+ Dashboard["Dashboard (React/Vite)"]
+ IntegratorBot["Integrator Bot (Discord, Telegram, WhatsApp, etc.)"]
+ Firebase["Firebase (Auth, DB, Functions)"]
+ User -->|"Browser"| Dashboard
+ User -->|"Chat Commands"| IntegratorBot
+ Dashboard -->|"Realtime/REST"| Firebase
+ IntegratorBot -->|"Realtime/REST"| Firebase
+ Dashboard -->|"Bot Management"| IntegratorBot
 ```
 
 ---
@@ -54,37 +54,37 @@ flowchart TD
 
 1. Navigate to the dashboard app directory:
  ```sh
-   cd crewmate/apps/crewmate-dashboard
-   ```
+ cd crewmate/apps/crewmate-dashboard
+ ```
 2. Install dependencies:
  ```sh
-   pnpm install
-   # or
-   npm install
-   ```
+ pnpm install
+ # or
+ npm install
+ ```
 3. Start the development server:
  ```sh
-   pnpm dev
-   # or
-   npm run dev
-   ```
+ pnpm dev
+ # or
+ npm run dev
+ ```
 4. Open [http://localhost:5174](http://localhost:5174) in your browser.
 
 ### Running the Discord Bot
 
 1. Navigate to the Discord app directory:
  ```sh
-   cd crewmate/apps/discord
-   ```
+ cd crewmate/apps/discord
+ ```
 2. Install Python dependencies:
  ```sh
-   pip install -r requirements.txt
-   ```
+ pip install -r requirements.txt
+ ```
 3. Configure your bot token and Firebase credentials as needed.
 4. Run the bot:
  ```sh
-   python main.py
-   ```
+ python main.py
+ ```
 
 ## Contributing
 
