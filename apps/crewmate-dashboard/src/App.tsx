@@ -211,6 +211,11 @@ function Footer() {
       <div className="footer-content">
         <span className="footer-brand">Crewmate</span>
         <span>© {new Date().getFullYear()} Crewmate. Not affiliated with Among Us or Innersloth LLC.</span>
+        <span className="footer-legal">
+          <a href="/privacy.html">Privacy</a>
+          {' · '}
+          <a href="/terms.html">Terms</a>
+        </span>
       </div>
     </footer>
   )
