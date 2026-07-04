@@ -53,17 +53,17 @@ flowchart TD
 ### Running the Dashboard
 
 1. Navigate to the dashboard app directory:
-   ```sh
+ ```sh
    cd crewmate/apps/crewmate-dashboard
    ```
 2. Install dependencies:
-   ```sh
+ ```sh
    pnpm install
    # or
    npm install
    ```
 3. Start the development server:
-   ```sh
+ ```sh
    pnpm dev
    # or
    npm run dev
@@ -73,16 +73,16 @@ flowchart TD
 ### Running the Discord Bot
 
 1. Navigate to the Discord app directory:
-   ```sh
+ ```sh
    cd crewmate/apps/discord
    ```
 2. Install Python dependencies:
-   ```sh
+ ```sh
    pip install -r requirements.txt
    ```
 3. Configure your bot token and Firebase credentials as needed.
 4. Run the bot:
-   ```sh
+ ```sh
    python main.py
    ```
 
@@ -107,7 +107,6 @@ This project is for educational and demonstration purposes.
 - **Tech Stack:** Static / Basic Scripts
 - **Repository Size:** 73 tracked files
 - **Latest Update:** `6c491eb chore: add stale issue and PR validators`
-
 
 ---
 *☕ If you found this project useful, you can support my work at [kape.stimmie.dev](https://kape.stimmie.dev)!*
